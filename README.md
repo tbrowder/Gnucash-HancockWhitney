@@ -15,7 +15,7 @@ use GnuCash::HancockWhitney;
 DESCRIPTION
 ===========
 
-**GnuCash::HancockWhitney** is a Raku module that programs to manage and transform your transactions and monthly statements from [Hancock-Whitney Bank](https://hancockwhitney.com) (HWB) and facilitates importing transactions into [GnuCash](https://gnucash.org), the free and open source double-entry accounting program.
+**GnuCash::HancockWhitney** is a Raku module that provides programs to manage and transform your transactions and monthly statements from [Hancock-Whitney Bank](https://hancockwhitney.com) (HWB) and facilitates importing transactions into [GnuCash](https://gnucash.org), the free and open source double-entry accounting program.
 
 The information herein has been verified by the author from his regular use of it with his own HWB personal accounts as a client, and he has no other relationship with that company, its owners, or any of its subsidiaries.
 
@@ -30,7 +30,12 @@ The following items are available for download for checking, money market (savin
 
   * Transactions in OFX format
 
-  * Tranactions in formats for Quicken and Quick Books
+The following products are also provided but will not be discussed further:
+
+  * Transactions in formats for Money 2000, Quicken, and Quick Books
+
+Product details
+===============
 
 AUTHOR
 ======

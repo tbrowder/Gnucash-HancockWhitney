@@ -1,0 +1,19 @@
+Plan for the financial statement handler and
+associated financial files
+============================================
+
++ add an OFX handler
++ download copies of all available data from both banks
+  in all formats
++ add ofx format and schema data
++ add a sample of all incoming file names to the top data
+  block in program c*u
++ change c*u to a more appropriate name
++ investigate XML;:Class for OFX
+
+===============
+COMPLETED ITEMS
+===============
+
++ move source and this file to the 'my-private-data' repo
++ put unneeded data in a subdir
