@@ -1,0 +1,36 @@
+=begin pod
+
+=head1 NAME
+
+GnuCash::HancockWhitney - Manage your personal Hancock-Whitney Bank data and use it with GnuCash
+
+=head1 SYNOPSIS
+
+=begin code :lang<raku>
+
+use GnuCash::HancockWhitney;
+
+=end code
+
+=head1 DESCRIPTION
+
+B<GnuCash::HancockWhitney> is a Raku module that provides code and programs to manage and transform
+your transactions and monthly statements from Hancock-Whitney Bank (HWB) and facilitates importing
+transactions into L<https://gnucash.org|GnuCash>, the free and open source double-entry accounting program.
+
+=head2 Hancock-Whitney products
+
+
+
+
+=head1 AUTHOR
+
+Tom Browder <tbrowder@acm.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2022 Tom Browder
+
+This library is free software; you may redistribute it or modify it under the Artistic License 2.0.
+
+=end pod

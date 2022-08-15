@@ -1,0 +1,6 @@
+use Test;
+use GnuCash::HancockWhitney;
+
+pass "replace me";
+
+done-testing;
