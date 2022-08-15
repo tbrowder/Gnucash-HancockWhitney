@@ -46,6 +46,7 @@ Transactions in formats for Money 2000, Quicken, and Quick Books
 
 =head1 Product details
 
+=head1 Program details
 
 
 =head1 AUTHOR

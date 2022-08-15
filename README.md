@@ -37,6 +37,9 @@ The following products are also provided but will not be discussed further:
 Product details
 ===============
 
+Program details
+===============
+
 AUTHOR
 ======
 
