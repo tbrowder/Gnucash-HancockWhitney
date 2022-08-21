@@ -1,0 +1,1 @@
+../lib/GnuCash/HancockWhitney.rakumod

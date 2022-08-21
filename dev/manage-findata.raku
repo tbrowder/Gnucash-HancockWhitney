@@ -1,5 +1,28 @@
 #!/usr/bin/env raku
 
+#================================================================
+# TODO: comment out the following line before publishing
+use lib <../lib>; # TODO: comment out this line before publishing
+#================================================================
+
+use GnuCash::HancockWhitney;
+#use CLI::Help;
+
+my $local-dir = "./private";
+my $data-dir;
+if %*ENV<PRIVATE_FINANCIAL_DATA_SOURCE_DIR>:exists {
+    $data-dir = %*ENV<PRIVATE_FINANCIAL_DATA_SOURCE_DIR>;
+}
+unless $data-dir.IO.d {
+    note qq:to/HERE/;
+    WARNING: A private data source directory was not found or defined.
+      Define one by assigning it to the environment variable
+      'PRIVATE_FINANCIAL_DATA_SOURCE_DIR'.
+    Exiting...
+    HERE
+    exit;
+}
+
 =begin comment
   'hancock/chckng/0-statement-2021-12-21.pdf'
   'hancock/chckng/April 21, 2022.pdf'

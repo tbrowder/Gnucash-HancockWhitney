@@ -1,95 +1,46 @@
-private
-private/synovus
-private/synovus/chkng
 private/synovus/chkng/EStatement-2021-05-05-31366.pdf
-private/synovus/chkng/EStatement-2020-08-05-31315.pdf
-private/synovus/chkng/EStatement-2022-06-03-64154.pdf
 private/synovus/chkng/TransactionList-2022-08-14-47086.ofx
-private/synovus/chkng/EStatement-2022-04-05-31415.pdf
-private/synovus/chkng/EStatement-2021-10-05-31388.pdf
-private/synovus/chkng/EStatement-2022-08-03-46698.pdf
-private/synovus/chkng/EStatement-2021-03-03-31353.pdf
 private/synovus/chkng/TransactionList-2022-08-14-47039.csv
-private/synovus/chkng/EStatement-2022-02-03-31405.pdf
-private/synovus/chkng/EStatement-2020-10-05-31328.pdf
-private/synovus/chkng/EStatement-2021-04-05-31362.pdf
-private/synovus/chkng/EStatement-2020-07-03-31310.pdf
-private/synovus/chkng/EStatement-2021-08-04-31380.pdf
-private/synovus/chkng/EStatement-2021-11-03-31392.pdf
-private/synovus/chkng/EStatement-2021-01-06-31345.pdf
-private/synovus/chkng/EStatement-2020-11-04-31334.pdf
-private/synovus/chkng/EStatement-2020-06-03-31250.pdf
-private/synovus/chkng/EStatement-2020-09-03-31320.pdf
-private/synovus/chkng/EStatement-2021-12-03-31396.pdf
-private/synovus/chkng/EStatement-2022-07-06-54753.pdf
-private/synovus/chkng/EStatement-2021-06-03-31371.pdf
-private/synovus/chkng/EStatement-2021-09-03-31384.pdf
-private/synovus/chkng/EStatement-2021-02-03-31349.pdf
-private/synovus/chkng/EStatement-2020-12-03-31338.pdf
-private/synovus/chkng/EStatement-2022-03-03-31411.pdf
-private/synovus/chkng/EStatement-2022-05-04-31419.pdf
-private/synovus/chkng/EStatement-2022-01-05-31401.pdf
-private/synovus/chkng/EStatement-2021-07-06-31377.pdf
-private/synovus/mmkt
+
 private/synovus/mmkt/EStatement-2020-11-17-47916.pdf
-private/synovus/mmkt/EStatement-2020-09-16-47900.pdf
-private/synovus/mmkt/EStatement-2022-01-18-48025.pdf
-private/synovus/mmkt/EStatement-2021-01-19-47963.pdf
-private/synovus/mmkt/EStatement-2021-10-18-48011.pdf
-private/synovus/mmkt/EStatement-2021-08-16-48000.pdf
-private/synovus/mmkt/EStatement-2021-11-16-48014.pdf
-private/synovus/mmkt/EStatement-2021-06-15-47988.pdf
-private/synovus/mmkt/EStatement-2022-03-15-48033.pdf
-private/synovus/mmkt/EStatement-2021-05-17-47982.pdf
-private/synovus/mmkt/EStatement-2022-06-15-48057.pdf
-private/synovus/mmkt/EStatement-2021-07-16-47993.pdf
-private/synovus/mmkt/EStatement-2021-09-16-48005.pdf
-private/synovus/mmkt/EStatement-2021-03-15-47972.pdf
-private/synovus/mmkt/EStatement-2022-04-15-48038.pdf
-private/synovus/mmkt/EStatement-2020-08-17-47887.pdf
-private/synovus/mmkt/EStatement-2021-04-15-47977.pdf
-private/synovus/mmkt/EStatement-2021-02-16-47968.pdf
-private/synovus/mmkt/EStatement-2022-02-15-48029.pdf
-private/synovus/mmkt/EStatement-2021-12-15-48018.pdf
-private/synovus/mmkt/EStatement-2020-12-15-47942.pdf
 private/synovus/mmkt/TransactionList-2022-08-14-47152.csv
-private/synovus/mmkt/EStatement-2022-07-18-47011.pdf
-private/synovus/mmkt/EStatement-2020-10-16-47912.pdf
 private/synovus/mmkt/TransactionList-2022-08-14-47168.ofx
-private/synovus/mmkt/EStatement-2022-05-16-48043.pdf
-private/synovus/visa
+
 private/synovus/visa/transactions_2021-09-08.ofx
 private/synovus/visa/transactions_2022-07-08.ofx
+
 private/synovus/visa/Transaction History_2022-02-08.csv
-private/synovus/visa/transactions_2021-10-08.ofx
-private/synovus/visa/TransactionList-2022-08-14-47230.csv
-private/synovus/visa/transactions_2021-11-08.ofx
 private/synovus/visa/Transaction History_2021-10-08.csv
+private/synovus/visa/TransactionList-2022-08-14-47230.csv
+
+private/synovus/visa/transactions_2021-10-08.ofx
+private/synovus/visa/transactions_2021-11-08.ofx
 private/synovus/visa/transactions_2022-01-08.ofx
 private/synovus/visa/transactions_2021-08-08.ofx
+private/synovus/visa/transactions_2021-12-08.ofx
+private/synovus/visa/transactions_2022-05-08.ofx
+private/synovus/visa/transactions_2022-03-08.ofx
+private/synovus/visa/transactions_2022-06-08.ofx
+private/synovus/visa/TransactionList-2022-08-14-47277.ofx
+private/synovus/visa/transactions_2021-07-08.ofx
+private/synovus/visa/transactions_2022-04-08.ofx
+private/synovus/visa/transactions_2022-02-08.ofx
+
 private/synovus/visa/Transaction History_2022-07-08.csv
 private/synovus/visa/Transaction History_2022-03-08.csv
 private/synovus/visa/Transaction History_2022-05-08.csv
-private/synovus/visa/transactions_2021-12-08.ofx
-private/synovus/visa/transactions_2022-05-08.ofx
 private/synovus/visa/Transaction History_2021-09-08.csv
-private/synovus/visa/transactions_2022-03-08.ofx
 private/synovus/visa/Transaction History_2021-08-08.csv
 private/synovus/visa/Transaction History_2021-11-08.csv
-private/synovus/visa/TransactionList-2022-08-14-47277.ofx
 private/synovus/visa/Transaction History_2021-07-08.csv
 private/synovus/visa/Transaction History_2022-01-08.csv
-private/synovus/visa/transactions_2022-06-08.ofx
 private/synovus/visa/Transaction History_2021-12-08.csv
-private/synovus/visa/transactions_2021-07-08.ofx
 private/synovus/visa/Transaction History_2022-06-08.csv
 private/synovus/visa/Transaction History_2022-04-08.csv
-private/synovus/visa/transactions_2022-04-08.ofx
-private/synovus/visa/transactions_2022-02-08.ofx
-private/hancock
-private/hancock/chkng
+
 private/hancock/chkng/February 21, 2022.pdf
 private/hancock/chkng/May 20, 2022.pdf
+
 private/hancock/chkng/Transactions_5790.ofx
 private/hancock/chkng/July 22, 2022.pdf
 private/hancock/chkng/Transactions_5790 (1).ofx

@@ -27,24 +27,58 @@ The following items are available for download for checking, money market (savin
 accounts:
 
 =begin item
-Monthly statements in PDF format
-=end item
-
-=begin item
 Transactions in CSV format
 =end item
 
 =begin item
-Transactions in OFX format
+Monthly statements in PDF format
 =end item
 
 The following products are also provided but will not be discussed further:
+
+=begin item
+Transactions in OFX format
+=end item
 
 =begin item
 Transactions in formats for Money 2000, Quicken, and Quick Books
 =end item
 
 =head1 Product details
+
+=head2 Transactions in CSV format
+
+The CSV transaction files are downloaded as needed by the client
+by specifying either a time period or the last 30 days. The
+downloaded filename has no apparent relation to anything
+and may result in a duplicated name with a ' (n)' inserted
+as is normal on many OSs.
+
+This module has a program ?? that will process such a file
+and assemble transactions into separate files by month
+and named accordingly.
+
+=head3 CSV file header
+
+The author's CSV file headers are shown here:
+
+=begin code
+=wnd code
+
+The client should download on a regular basis to ensure no
+tranactions are missed as HWB only provides data for
+the last 16 months. Older ones may be available for a fee.
+
+=head2 Monthly statements in PDF format
+
+HWB monthly statements are named in a format like this: 'February 23, 2022.pdf'.
+Consequently, a directory listing is not in date order. Program ?
+can be used to rename them into ISO names so they sort properly in date order.
+
+The client should download on a regular basis to ensure no
+tranactions are missed as HWB only provides data for
+the last 24 months. Older ones may be available for a fee.
+
 
 =head1 Program details
 
