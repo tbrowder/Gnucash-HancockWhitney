@@ -70,7 +70,8 @@ for @*ARGS {
     when /^c/ { ++$convert }
 }
 
-my $dir = '.';
+#my $dir = '.';
+my $dir = $data-dir;
 enum STyp <Pdf Ofx Csv>;
 my %OFX-fils  = collect-files :$dir, :suff(Ofx), :$debug;
 my %CSV-fils  = collect-files :$dir, :suff(Csv), :$debug;
@@ -164,9 +165,11 @@ if $convert and $nb {
 }
 
 if $nb {
-    note "FATAL: $nb files have NOT been converted to the new transformed format yet:";
+    #note "FATAL: $nb files have NOT been converted to the new transformed format yet:";
+    note "WARNING: $nb files have NOT been converted to the new transformed format yet:";
     note "  $_" for @badpdf;
-    note "Use the 'convert' option to correct the names."; exit;
+    note "Use the 'convert' option to correct the names.";
+    # exit;
 }
 
 
@@ -208,7 +211,7 @@ FILE: for %PDF-fils.keys -> $pfil {
 }
 
 say "Checking for uncopied Hancock-Whitney files...";
-{
+if 0 {
     my $nf = 0;
     for %HW-fils.keys.sort -> $copied-fil {
         my $hw-fil = %HW-fils{$copied-fil};
@@ -275,6 +278,8 @@ if $Delete {
         say "No files were deleted.";
     }
 }
+
+say "Normal end.";
 
 #### subroutines ####
 sub change-name(:$dirname!, :$basename, :$debug --> Str) is export {
