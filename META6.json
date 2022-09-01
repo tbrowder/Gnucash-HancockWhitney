@@ -9,7 +9,8 @@
   "depends": [
     "Text::CSV::LibCSV",
     "Text::Utils",
-    "Config::TOML"
+    "Config::TOML",
+    "Config::INI"
   ],
   "description": "Provides Raku programs to use and manage financial transaction files",
   "license": "Artistic-2.0",
