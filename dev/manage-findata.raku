@@ -7,7 +7,7 @@ use Text::Utils :normalize-string;
 use lib <../lib >; # TODO: comment out this line before publishing
 #================================================================
 
-use GnuCash::HancockWhitney;
+use Finance::HancockWhitney;;
 use TXF;
 use TXF::Utils;
 

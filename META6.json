@@ -9,14 +9,14 @@
   ],
   "description": "blah blah blah",
   "license": "Artistic-2.0",
-  "name": "GnuCash::HancockWhitney",
+  "name": "Finance::Personal",
   "perl": "6.d",
   "provides": {
-    "GnuCash::HancockWhitney": "lib/GnuCash/HancockWhitney.rakumod"
+    "Finance::Personal": "lib/Finance/Personal.rakumod"
   },
   "resources": [
   ],
-  "source-url": "https://github.com/tbrowder/Gnucash-HancockWhitney.git",
+  "source-url": "https://github.com/tbrowder/Finance-Personal.git",
   "tags": [
   ],
   "test-depends": [
