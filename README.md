@@ -15,7 +15,7 @@ use Finance::Personal;
 DESCRIPTION
 ===========
 
-**Financw::Personal** is a Raku module that provides programs to manage and transform your transactions and monthly statements from from banks and other financial institution. In the process, its products should facilitate importing transactions into [GnuCash](https://gnucash.org), the free and open source double-entry accounting program.
+**Finance::Personal** is a Raku module that provides programs to manage and transform your transactions and monthly statements from from banks and other financial institutions. In the process, its products should facilitate importing transactions into [GnuCash](https://gnucash.org), the free and open source double-entry accounting program.
 
 Currently the module recognizes CSV products from the following institutions:
 
