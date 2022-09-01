@@ -1,11 +1,11 @@
-unit module TXF;
+unit module Finance::TXF;
 
 use Text::CSV::LibCSV;
 use Text::Utils :normalize-string;
 use Config::TOML;
 
-use TXF::Utils;
-use TXF::CSV2TXF;
+use Finance::TXF::Utils;
+use Finance::TXF::CSV2TXF;
 
 constant $END-RECORD  = '^';
 constant $TXF-VERSION = '042'; # TXF format version

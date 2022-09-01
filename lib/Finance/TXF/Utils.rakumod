@@ -1,4 +1,4 @@
-unit module TXF::Utils;
+unit module Finance::TXF::Utils;
 
 sub Date2date(Date $d, :$debug --> Str) is export {
     # convert a Date object to mm/dd/yyyy string format

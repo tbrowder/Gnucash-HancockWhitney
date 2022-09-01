@@ -2,24 +2,30 @@
 
 =head1 NAME
 
-B<GnuCash::HancockWhitney> - Manage your personal Hancock-Whitney Bank data and use it with GnuCash
+B<Finance::Personal> - Provides Raku programs to use and manage financial transaction files
 
 =head1 SYNOPSIS
 
 =begin code :lang<raku>
 
-use GnuCash::HancockWhitney;
+use Finance::Personal;
 
 =end code
 
 =head1 DESCRIPTION
 
-B<GnuCash::HancockWhitney> is a Raku module that provides programs to manage and transform
-your transactions and monthly statements from L<Hancock-Whitney Bank|https://hancockwhitney.com> (HWB) and facilitates importing
+B<Financw::Personal> is a Raku module that provides programs to manage and transform
+your transactions and monthly statements from from banks and other financial institution.
+In the process, its products should facilitate importing
 transactions into L<GnuCash|https://gnucash.org>, the free and open source double-entry accounting program.
 
-The information herein has been verified by the author from his regular use of it with his own HWB personal accounts as
-a client, and he has no other relationship with that company, its owners, or any of its subsidiaries.
+Currently the module recognizes CSV products from the following institutions:
+
+=item L<Hancock-Whitney Bank|https://hancockwhitney.com> (HWB)
+=item L<Synovus Bank|https://synovus.com>
+
+The information herein has been verified by the author from his regular use of it with his own HWB and Synovus personal accounts as
+a client, and he has no other relationship with those companies, their owners, or any of their subsidiaries.
 
 =head2 Hancock-Whitney personal account products
 
@@ -63,7 +69,7 @@ and named accordingly.
 The author's CSV file headers are shown here:
 
 =begin code
-=wnd code
+=end code
 
 The client should download on a regular basis to ensure no
 tranactions are missed as HWB only provides data for
@@ -79,9 +85,12 @@ The client should download on a regular basis to ensure no
 tranactions are missed as HWB only provides data for
 the last 24 months. Older ones may be available for a fee.
 
+=head2 TODO
+
+=item Complete and document Synovus Bank transaction handling
+=item Add other file format handling (OFX, json)
 
 =head1 Program details
-
 
 =head1 AUTHOR
 

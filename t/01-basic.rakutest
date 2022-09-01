@@ -1,5 +1,5 @@
 use Test;
-use GnuCash::HancockWhitney;
+use Finance::Personal;
 
 pass "replace me";
 

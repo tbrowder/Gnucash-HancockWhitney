@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-use TXF::Utils;
+use Finance::TXF::Utils;
 
-unit module TXF::CSV2TXF;
+unit module Finance::TXF::CSV2TXF;
 
 our class F8949-transaction is export {
     # why no num shares on the form?

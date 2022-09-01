@@ -7,12 +7,17 @@
   ],
   "depends": [
   ],
-  "description": "blah blah blah",
+  "description": "Provides Raku programs to use and manage financial transaction files",
   "license": "Artistic-2.0",
   "name": "Finance::Personal",
   "perl": "6.d",
   "provides": {
-    "Finance::Personal": "lib/Finance/Personal.rakumod"
+    "Finance::HancockWhitney": "lib/Finance/HancockWhitney.rakumod",
+    "Finance::Personal": "lib/Finance/Personal.rakumod",
+    "Finance::Synovus": "lib/Finance/Synovus.rakumod",
+    "Finance::TXF": "lib/Finance/TXF.rakumod",
+    "Finance::TXF::CSV2TXF": "lib/Finance/TXF/CSV2TXF.rakumod",
+    "Finance::TXF::Utils": "lib/Finance/TXF/Utils.rakumod"
   },
   "resources": [
   ],
