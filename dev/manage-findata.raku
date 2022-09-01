@@ -1,11 +1,16 @@
 #!/usr/bin/env raku
+use Text::CSV::LibCSV;
+use Text::Utils :normalize-string;
 
 #================================================================
 # TODO: comment out the following line before publishing
-use lib <../lib>; # TODO: comment out this line before publishing
+use lib <../lib >; # TODO: comment out this line before publishing
 #================================================================
 
 use GnuCash::HancockWhitney;
+use TXF;
+use TXF::Utils;
+
 #use CLI::Help;
 
 my $local-dir = "./private";
@@ -41,6 +46,7 @@ use Date::Names;
 my $Delete  = 0;
 my $debug   = 0;
 my $convert = 0;
+my $extract = 0;
 if not @*ARGS.elems {
     print qq:to/HERE/;
     Usage: {$*PROGRAM.basename} go | Delete [debug]
@@ -60,6 +66,9 @@ if not @*ARGS.elems {
       Designed for a one-time format use with other programs
       such as <https://bankstatementconverter.com>.
 
+    extract
+      Extracts the first two lines of the HWB CSV files and classifies
+      sends to stdout.
     HERE
     exit;
 }
@@ -68,6 +77,7 @@ for @*ARGS {
     when /^d/ { ++$debug }
     when /^D/ { ++$Delete }
     when /^c/ { ++$convert }
+    when /^e/ { ++$extract }
 }
 
 #my $dir = '.';
@@ -98,7 +108,23 @@ sub collect-files(:$dir, STyp :$suff, :$debug --> Hash) is export {
     for @fils -> $f {
         # ignore some
         next if $f ~~ /:i psrr | USAA | USAFA | canterbury/;
-        my $brand;
+        my ($brand, $acct);
+        with $f {
+            when /:i han|hw  / { $brand = 'hwb'; }
+            when /:i syno / { $brand = 'syn'; }
+        }
+
+        with $f {
+            when /:i chkng / { $acct = 'chkng'; }
+            when /:i mmkt  / { $acct = 'mmkt'; }
+            when /:i visa  / { $acct = 'visa'; }
+
+            default {
+                die "FATAL: Unexpected path '$f'";
+            }
+        }
+
+        =begin comment
         if $f ~~ /:i han|hw  / {
             $brand = 'hwb';
         }
@@ -108,7 +134,10 @@ sub collect-files(:$dir, STyp :$suff, :$debug --> Hash) is export {
         else {
             die "FATAL: Unexpected path '$f'";
         }
-        %fils{$f} = $brand;
+        =end comment
+
+        %fils{$f}<brand> = $brand // '';
+        %fils{$f}<acct>  = $acct  // '';
     }
     %fils
 }
@@ -116,17 +145,22 @@ sub collect-files(:$dir, STyp :$suff, :$debug --> Hash) is export {
 if $debug {
     say "DEBUG: PDF files found:";
     for %PDF-fils.keys.sort -> $f {
-        my $brand = %PDF-fils{$f};
+        my $brand = %PDF-fils{$f}<brand>;
+        my $acct  = %PDF-fils{$f}<acct>;
         say "  brand: '$brand'; path '$f'";
     }
     say "DEBUG: OFX files found:";
+
     for %OFX-fils.keys.sort -> $f {
-        my $brand = %OFX-fils{$f};
+        my $brand = %PDF-fils{$f}<brand>;
+        my $acct  = %PDF-fils{$f}<acct>;
         say "  brand: '$brand'; path '$f'";
     }
     say "DEBUG: CSV files found:";
+
     for %CSV-fils.keys.sort -> $f {
-        my $brand = %CSV-fils{$f};
+        my $brand = %PDF-fils{$f}<brand>;
+        my $acct  = %PDF-fils{$f}<acct>;
         say "  brand: '$brand'; path '$f'";
     }
 }
@@ -240,6 +274,30 @@ for %Copied-fils.keys.sort -> $f {
     say "  $f";
 }
 
+if $extract {
+    say "Extracting two CSV lines from each HWB file";
+    say "DEBUG: CSV files found:";
+    for %CSV-fils.keys.sort -> $f {
+        my $brand = %CSV-fils{$f}<brand> // '';
+        my $acct  = %CSV-fils{$f}<acct>  // '';
+        note "DEBUG: 2 csv, brand '$brand', acct '$acct', path: '$f'" if 1 or $debug;
+        next if $brand eq 'syn';
+        
+        # extract N lines
+        my $n = 4;
+        if $f.IO.r {
+            say "Path: $f";
+            for $f.IO.lines.kv -> $i, $line {
+                last if $i > $n;
+                say "  $line";
+            }
+        }
+        else {
+            die "FATAL: Unable to open file $f";
+        }
+    }
+}
+
 if $Delete {
     say "Selecting files to delete:";
     my $nd = 0;
@@ -311,7 +369,8 @@ sub change-name(:$dirname!, :$basename, :$debug --> Str) is export {
         die "FATAL: Unexpected old file basename: $basename";
     }
     $newbasename;
-}
+
+} # sub change-name(:$dirname!, :$basename, :$debug --> Str) is export {
 
 sub get-match($basename, :$debug --> List) is export {
     # Given a pdf file name, determine its matching
@@ -362,4 +421,35 @@ sub get-match($basename, :$debug --> List) is export {
     }
 
     $intype, $match;
+} # sub get-match($basename, :$debug --> List) is export {
+
+sub csvhdrs2X($csvfile --> Hash) {
+    # given a CSV file with headers, map the appropriate
+    # header to the X field name
+
+    # get the field names from the first row of the file
+    my $delim = csv-delim $csvfile;
+    my Text::CSV::LibCSV $parser .= new(:auto-decode('utf8'), :delimiter($delim));
+    my @rows = $parser.read-file($csvfile);
+    my @fields = @(@rows[0]);
+    my $len = @fields.elems;
+
+    # make sure the headers are normalized before assembling into a check string
+    my $fstring = '';
+    for 0..^$len -> $i {
+        @fields[$i] = normalize-string @fields[$i];
+        $fstring ~= '|' if $i;
+        $fstring ~= @fields[$i];
+    }
+
+    #=begin format
+    # check the field string against known formats
+    my %Xfields = find-known-formats $fstring, $csvfile;
+    if not %Xfields.elems {
+        # we must abort unless we can get an alternative
+        # by allowing the user to provide a map in an input
+        # file
+    }
+    #=end format
+    return %Xfields;
 }

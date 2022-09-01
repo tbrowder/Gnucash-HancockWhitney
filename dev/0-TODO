@@ -10,6 +10,20 @@ associated financial files
 + keep original, downloaded products in their own
   directory; create a script or function to copy or
   update into the mandatory local "./private" subdirectory;
++ investigate adding (and testing) an index number in
+  the HWB CSV transactions to disambiguate seemingly
+  identical transactions. assuming the original files
+  have transactions in temporal order, such an index
+  should start anew on the first of every month.
++ break HWB tranasction files into monthly ones
++ prove HWB tranaction files are additive, that is,
+  a file downloaded this week contains the tranactions
+  for last week
++ check to see if there is any significance in CSV
+  file names from day to day
++ NOTE HWB CSV temporal order is reversed, .i.e.,
+  the earliest transaction is on the end and the 
+  latest is on the head (after the header line)
 
 Lower priority (OFX, PDF, API)
 ------------------------------

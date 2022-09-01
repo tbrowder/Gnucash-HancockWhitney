@@ -155,7 +155,7 @@ class TXF-file {
 
 }
 
-sub csv-delim($csv-fname) {
+sub csv-delim($csv-fname) is export {
     # given a CSV type file, guess the delimiter
     # from the extension
     my $delim = ','; # default
@@ -177,7 +177,8 @@ sub csv-delim($csv-fname) {
     return $delim;
 }
 
-sub csvhdrs2irs($csvfile --> Hash) {
+
+sub csvhdrs2irs($csvfile --> Hash) is export {
     # given a CSV file with headers, map the appropriate
     # header to the IRS field name
 
@@ -205,7 +206,7 @@ sub csvhdrs2irs($csvfile --> Hash) {
     return %irsfields;
 }
 
-sub find-known-formats($fstring, $csvfile --> Hash) {
+sub find-known-formats($fstring, $csvfile --> Hash) is export {
 }
 
 
