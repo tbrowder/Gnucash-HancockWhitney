@@ -23,7 +23,12 @@ associated financial files
   file names from day to day
 + NOTE HWB CSV temporal order is reversed, .i.e.,
   the earliest transaction is on the end and the 
-  latest is on the head (after the header line)
+  latest is on the head (after the header line).
+  And so are Synovus' files.
++ Add a role to help enable handlers for files
+  from different banks
++ Add a routine to separate tranactions into months.
++ Improve docs.
 
 Lower priority (OFX, PDF, API)
 ------------------------------
