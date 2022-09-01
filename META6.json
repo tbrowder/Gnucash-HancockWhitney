@@ -20,9 +20,7 @@
     "Finance::HancockWhitney": "lib/Finance/HancockWhitney.rakumod",
     "Finance::Personal": "lib/Finance/Personal.rakumod",
     "Finance::Synovus": "lib/Finance/Synovus.rakumod",
-    "Finance::TXF": "lib/Finance/TXF.rakumod",
-    "Finance::TXF::CSV2TXF": "lib/Finance/TXF/CSV2TXF.rakumod",
-    "Finance::TXF::Utils": "lib/Finance/TXF/Utils.rakumod"
+    "Finance::Utils": "lib/Finance/Utils.rakumod"
   },
   "resources": [
   ],

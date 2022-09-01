@@ -8,8 +8,7 @@ use lib <../lib >; # TODO: comment out this line before publishing
 #================================================================
 
 use Finance::HancockWhitney;;
-use Finance::TXF;
-use Finance::TXF::Utils;
+use Finance::Utils;
 
 my $local-dir = "./private";
 my $data-dir;
