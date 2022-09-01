@@ -4,6 +4,7 @@
     "Tom Browder"
   ],
   "build-depends": [
+    "LibraryMake"
   ],
   "depends": [
     "Text::CSV::LibCSV",
